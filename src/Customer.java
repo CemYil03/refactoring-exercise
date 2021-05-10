@@ -2,7 +2,7 @@
 import java.util.Vector;
 import java.util.Enumeration;
 
-class Customer {
+public class Customer {
 
     private String name;
     private Vector rentals = new Vector();
@@ -31,13 +31,13 @@ class Customer {
             Rental rental = (Rental) enum_rentals.nextElement();
             
             //determine amounts for each line
-            thisAmount = amountFor(rental);
+            thisAmount = rental.getAmount();
             
             // add frequent renter points
             frequentRenterPoints ++;
 
             // add bonus for a two day new release rental
-            if ((rental.getMovie().getPriceCode() == Movie.NEW_RELEASE) && rental.getDaysRented() > 1) 
+            if ((rental.getMovie().getType() == MovieType.NEW_RELEASE) && rental.getDaysRented() > 1) 
                 frequentRenterPoints ++;
             
             //show figures for this rental
@@ -51,28 +51,6 @@ class Customer {
         result += "You earned " + String.valueOf(frequentRenterPoints) + " frequent renter points";
         
         return result;
-    }
-
-    private double amountFor(Rental rental) {
-        double thisAmount = 0;
-
-        switch (rental.getMovie().getPriceCode()) {
-            case Movie.REGULAR:
-                thisAmount += 2;
-                if (rental.getDaysRented() > 2)
-                    thisAmount += (rental.getDaysRented() - 2) * 1.5;
-                break;
-            case Movie.NEW_RELEASE:
-                thisAmount += rental.getDaysRented() * 3;
-                break;
-            case Movie.CHILDRENS:
-                thisAmount += 1.5;
-                if (rental.getDaysRented() > 3)
-                    thisAmount += (rental.getDaysRented() - 3) * 1.5;
-                break;
-        }
-
-        return thisAmount;
     }
 
 }
