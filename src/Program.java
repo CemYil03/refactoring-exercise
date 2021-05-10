@@ -1,7 +1,4 @@
 
-import java.lang.*;
-import java.util.*;
-
 public class Program {
     
     public static void main(String args[]) {
@@ -16,7 +13,8 @@ public class Program {
 
         Customer c1 = new Customer("joe");
 
-        c1.addRental(r1);   c1.addRental(r2);
+        c1.addRental(r1);
+        c1.addRental(r2);
 
         System.out.println("Let's get the Statement");
 

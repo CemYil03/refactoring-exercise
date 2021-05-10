@@ -1,6 +1,6 @@
 
-import java.lang.*;
-import java.util.*;
+import java.util.Vector;
+import java.util.Enumeration;
 
 class Customer {
 
