@@ -1,23 +1,20 @@
 
-import java.util.Vector;
-import java.util.Enumeration;
+import java.util.ArrayList;
 
 public class Customer {
 
     private String name;
-    private Vector rentals = new Vector();
+    private ArrayList<Rental> rentals = new ArrayList<Rental>();
     
     public Customer(String name) {
         this.name = name;
     }
 
     public void addRental(Rental rental) {
-        this.rentals.addElement(rental);
+        this.rentals.add(rental);
     }
 
     public String statement() {
-        Enumeration enum_rentals = this.rentals.elements();
-
         // header        
         String header = String.format("Rental Record for %s\n", this.name);
 
@@ -26,8 +23,7 @@ public class Customer {
         double totalAmount = 0;
         int frequentRenterPoints = 0;
 
-        while (enum_rentals.hasMoreElements()) {
-            Rental rental = (Rental) enum_rentals.nextElement();
+        for (Rental rental: this.rentals) {
             frequentRenterPoints += rental.getFrequentRenterPoints();
             totalAmount += rental.getAmount();
             
