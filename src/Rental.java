@@ -34,5 +34,9 @@ public class Rental {
         }
 
     }
+
+    public int getFrequentRenterPoints() {
+        return (this.movie.getType() == Movie.MovieType.NEW_RELEASE && this.daysRented > 1) ? 2 : 1;
+    }
     
 }

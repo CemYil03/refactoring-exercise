@@ -5,8 +5,8 @@ public class Program {
         String result;
         System.out.println("\n\n" + "Welcome to the Movie Store");
 
-        Movie m1 = new Movie("movie1", MovieType.NEW_RELEASE);
-        Movie m2 = new Movie("movie2", MovieType.CHILDRENS);
+        Movie m1 = new Movie("movie1", Movie.MovieType.NEW_RELEASE);
+        Movie m2 = new Movie("movie2", Movie.MovieType.CHILDRENS);
 
         Rental r1 = new Rental(m1, 10);
         Rental r2 = new Rental(m2, 5);

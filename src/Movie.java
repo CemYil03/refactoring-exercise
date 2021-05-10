@@ -1,6 +1,12 @@
 
 public class Movie {
 
+    public enum MovieType {
+        REGULAR,
+        NEW_RELEASE,
+        CHILDRENS
+    }
+
     private String title;
     private MovieType type;
 
