@@ -15,7 +15,7 @@ public class Program {
         c1.addRental(r1);
         c1.addRental(r2);
 
-        System.out.println("Let's get the Statement" + c1.statement() + "\n\n");
+        System.out.println("Let's get the Statement" + c1.statement() + "\n");
     }
 
 }

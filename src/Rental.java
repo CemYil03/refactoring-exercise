@@ -29,7 +29,7 @@ public class Rental {
                 return 1.5 + this.daysRented > 3 ? (this.daysRented - 3) * 1.5 : 0;
             
             default:
-                throw new Error();
+                throw new Error("amount calculation rule for " + this.movie.getType() + " is missing");
         }
     }
 
