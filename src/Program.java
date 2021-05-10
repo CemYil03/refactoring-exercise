@@ -2,7 +2,6 @@
 public class Program {
     
     public static void main(String args[]) {
-        String result;
         System.out.println("\n\n" + "Welcome to the Movie Store");
 
         Movie m1 = new Movie("movie1", Movie.MovieType.NEW_RELEASE);
@@ -16,11 +15,7 @@ public class Program {
         c1.addRental(r1);
         c1.addRental(r2);
 
-        System.out.println("Let's get the Statement");
-
-        result = c1.statement();
-
-        System.out.println(result + "\n\n");
+        System.out.println("Let's get the Statement" + c1.statement() + "\n\n");
     }
 
 }

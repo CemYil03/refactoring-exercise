@@ -15,25 +15,14 @@ public class Customer {
         this.rentals.addElement(rental);
     }
 
-    public String getName() {
-        return this.name;
-    }
-
     public String statement() {
         Enumeration enum_rentals = this.rentals.elements();
 
         // header        
-        String header = String.format(
-            """
-            Rental Record for %s
-            
-                    Title\t\tDays\tAmount
-            """,
-            this.getName()
-        );
+        String header = String.format("Rental Record for %s\n", this.name);
 
         // body
-        String body = "";
+        String body = "\tTitle\t\tDays\tAmount\n";
         double totalAmount = 0;
         int frequentRenterPoints = 0;
 
@@ -42,21 +31,25 @@ public class Customer {
             frequentRenterPoints += rental.getFrequentRenterPoints();
             totalAmount += rental.getAmount();
             
-            //show figures for this rental
-            body += "\t" + rental.getMovie().getTitle()+ "\t" + "\t" + rental.getDaysRented() + "\t" + String.valueOf(rental.getAmount()) + "\n";
+            body += String.format(
+                "\t%s\t\t%s\t%s\n",
+                rental.getMovie().getTitle(),
+                rental.getDaysRented(),
+                String.valueOf(rental.getAmount())
+            );
         }
 
         // footer
         String footer = String.format(
             """
-            \nAmount owed is %s
+            Amount owed is %s
             You earned %s frequent renter points
             """,
             String.valueOf(totalAmount),
             String.valueOf(frequentRenterPoints)
         );
         
-        return header + body + footer;
+        return header + "\n" + body + "\n" + footer;
     }
 
 }

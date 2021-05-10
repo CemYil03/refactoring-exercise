@@ -18,7 +18,6 @@ public class Rental {
     }
 
     public double getAmount() {
-
         switch (this.movie.getType()) {
             case REGULAR:
                 return 2.0 + this.daysRented > 2 ? (this.daysRented - 2) * 1.5 : 0;
@@ -32,7 +31,6 @@ public class Rental {
             default:
                 throw new Error();
         }
-
     }
 
     public int getFrequentRenterPoints() {
