@@ -8,9 +8,9 @@ public class Movie {
     private String title;
     private int priceCode;
 
-    public Movie(String newtitle, int newpriceCode) {
-        this.title = newtitle;
-        this.priceCode = newpriceCode;
+    public Movie(String title, int priceCode) {
+        this.title = title;
+        this.priceCode = priceCode;
     }
 
     public int getPriceCode() {
@@ -21,7 +21,7 @@ public class Movie {
         this.priceCode = arg;
     }
 
-    public String getTitle () {
+    public String getTitle() {
         return this.title;
     }
 
