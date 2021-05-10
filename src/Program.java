@@ -3,7 +3,7 @@ public class Program {
     
     public static void main(String args[]) {
         String result;
-        System.out.println("Welcome to the Movie Store");
+        System.out.println("\n\n" + "Welcome to the Movie Store");
 
         Movie m1 = new Movie("movie1", MovieType.NEW_RELEASE);
         Movie m2 = new Movie("movie2", MovieType.CHILDRENS);
@@ -20,7 +20,7 @@ public class Program {
 
         result = c1.statement();
 
-        System.out.println(result);
+        System.out.println(result + "\n\n");
     }
 
 }
